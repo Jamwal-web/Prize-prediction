@@ -141,6 +141,33 @@ async function startServer() {
     }
   });
 
+  app.post('/api/github-push', (req, res) => {
+    const { token } = req.body;
+    if (!token || !token.trim()) {
+      return res.status(400).json({ error: 'Please enter a valid GitHub Personal Access Token (classic token with "repo" scope or fine-grained token).' });
+    }
+
+    const cleanToken = token.trim();
+    const targetRepo = 'https://github.com/Jamwal-web/Prize-prediction.git';
+    const authUrl = targetRepo.replace('https://', `https://${cleanToken}@`);
+
+    const gitProc = spawn('git', ['push', authUrl, 'main', '--force']);
+    let stdout = '';
+    let stderr = '';
+
+    gitProc.stdout.on('data', (c) => { stdout += c.toString(); });
+    gitProc.stderr.on('data', (c) => { stderr += c.toString(); });
+
+    gitProc.on('close', (code) => {
+      // Redact token from any error message
+      const sanitizedStderr = stderr.replace(new RegExp(cleanToken, 'g'), '***');
+      if (code === 0) {
+        return res.json({ success: true, message: 'Successfully pushed codebase to https://github.com/Jamwal-web/Prize-prediction.git' });
+      }
+      return res.status(500).json({ error: `Push failed (exit code ${code}): ${sanitizedStderr || 'Authentication failed'}` });
+    });
+  });
+
   app.get('/api/engine-status', (req, res) => {
     const cppBinary = path.join(__dirname, 'backend', 'cpp_engine', 'forecast_engine');
     const cppExists = fs.existsSync(cppBinary);
