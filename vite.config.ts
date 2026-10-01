@@ -6,7 +6,6 @@ import {defineConfig} from 'vite';
 export default defineConfig(() => {
   server: {
     allowedHosts: [
-      'prize-prediction.onrender.com'
     
   return {
     plugins: [react(), tailwindcss()],
