@@ -5,9 +5,7 @@ import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
   server: {
-    allowedHosts: [
-    
-  return {
+     return {
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
