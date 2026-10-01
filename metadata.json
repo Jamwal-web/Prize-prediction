@@ -1,0 +1,6 @@
+{
+  "name": "PricePredictor AI",
+  "description": "Advanced product price prediction platform using Python ML, C++ DSA time-series forecasting, and interactive historical price analysis.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

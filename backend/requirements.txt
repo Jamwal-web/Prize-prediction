@@ -1,0 +1,13 @@
+# PricePredictor AI - Python Dependencies
+# Note: Core forecasting and DSA algorithms run on standard Python 3.10+ with zero external dependencies.
+# The following packages support the Flask web framework, production WSGI server, and optional scientific acceleration:
+
+Flask>=3.0.0,<4.0.0
+gunicorn>=21.2.0
+requests>=2.31.0
+python-dotenv>=1.0.0
+
+# Optional Machine Learning acceleration (app uses high-performance pure-Python + C++ DSA engine by default):
+numpy>=1.24.0
+scikit-learn>=1.3.0
+scipy>=1.11.0
