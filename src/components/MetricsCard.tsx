@@ -1,6 +1,7 @@
 import React from 'react';
 import { ModelMetrics, ModelComparisonItem } from '../types';
-import { Cpu, Activity, CheckCircle, BarChart3, HelpCircle } from 'lucide-react';
+import { Cpu } from 'lucide-react';
+import { formatINR } from '../utils/formatters';
 
 interface MetricsCardProps {
   metrics: ModelMetrics;
@@ -47,15 +48,15 @@ export const MetricsCard: React.FC<MetricsCardProps> = ({
         <div className="rounded-lg bg-slate-950/80 p-3 border border-slate-800/80">
           <div className="text-[11px] text-slate-400 font-medium">MAE (Mean Absolute Error)</div>
           <div className="mt-1 text-lg font-bold font-mono text-white tabular-nums">
-            ${metrics.mae.toFixed(2)}
+            {formatINR(metrics.mae, true)}
           </div>
-          <div className="text-[10px] text-slate-500 mt-0.5">Average dollar deviation</div>
+          <div className="text-[10px] text-slate-500 mt-0.5">Average rupee deviation</div>
         </div>
 
         <div className="rounded-lg bg-slate-950/80 p-3 border border-slate-800/80">
           <div className="text-[11px] text-slate-400 font-medium">RMSE (Root Mean Square)</div>
           <div className="mt-1 text-lg font-bold font-mono text-white tabular-nums">
-            ${metrics.rmse.toFixed(2)}
+            {formatINR(metrics.rmse, true)}
           </div>
           <div className="text-[10px] text-slate-500 mt-0.5">Penalizes large errors</div>
         </div>
@@ -102,8 +103,8 @@ export const MetricsCard: React.FC<MetricsCardProps> = ({
                     <td className="py-2 px-3 text-right text-blue-400 font-bold tabular-nums">
                       {m.weight_pct}%
                     </td>
-                    <td className="py-2 px-3 text-right tabular-nums">${m.mae.toFixed(2)}</td>
-                    <td className="py-2 px-3 text-right tabular-nums">${m.rmse.toFixed(2)}</td>
+                    <td className="py-2 px-3 text-right tabular-nums">{formatINR(m.mae, true)}</td>
+                    <td className="py-2 px-3 text-right tabular-nums">{formatINR(m.rmse, true)}</td>
                     <td className="py-2 px-3 text-right tabular-nums">{m.mape.toFixed(2)}%</td>
                     <td className="py-2 px-3 text-right text-emerald-400 tabular-nums">
                       {m.r2.toFixed(3)}

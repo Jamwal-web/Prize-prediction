@@ -1,6 +1,7 @@
 import React, { useState, useMemo, useRef } from 'react';
 import { PricePoint, ForecastPoint } from '../types';
-import { TrendingUp, Layers, Eye, Calendar, Sparkles } from 'lucide-react';
+import { TrendingUp, Layers, Calendar } from 'lucide-react';
+import { formatINR, formatINRCompact } from '../utils/formatters';
 
 interface PriceChartProps {
   historicalPrices: PricePoint[];
@@ -217,7 +218,7 @@ export const PriceChart: React.FC<PriceChartProps> = ({
           <div className="flex items-center gap-2 text-xs text-slate-400 mt-1">
             <span>Model: {algorithmName}</span>
             <span aria-hidden="true">·</span>
-            <span>Current: <strong className="text-emerald-400 font-mono tabular-nums">${currentPrice.toLocaleString(undefined, { minimumFractionDigits: 2 })}</strong></span>
+            <span>Current: <strong className="text-emerald-400 font-mono tabular-nums">{formatINR(currentPrice, true)}</strong></span>
             <span aria-hidden="true">·</span>
             <span className="truncate max-w-[180px] text-slate-400">{currentPriceSource}</span>
           </div>
@@ -311,7 +312,7 @@ export const PriceChart: React.FC<PriceChartProps> = ({
                   textAnchor="end"
                   className="font-mono tabular-nums"
                 >
-                  ${Math.round(tick).toLocaleString()}
+                  {formatINR(tick, false)}
                 </text>
               </g>
             );
@@ -513,12 +514,12 @@ export const PriceChart: React.FC<PriceChartProps> = ({
             </div>
 
             <div className="mt-2 text-base font-bold font-mono text-white tabular-nums">
-              ${hoveredPoint.price.toLocaleString(undefined, { minimumFractionDigits: 2 })}
+              {formatINR(hoveredPoint.price, true)}
             </div>
 
             {hoveredPoint.lowerBound !== undefined && hoveredPoint.upperBound !== undefined && (
               <div className="mt-1 text-[11px] text-slate-400 font-mono">
-                <div>95% CI: <span className="text-amber-300 font-medium">${hoveredPoint.lowerBound.toLocaleString()} – ${hoveredPoint.upperBound.toLocaleString()}</span></div>
+                <div>95% CI: <span className="text-amber-300 font-medium">{formatINR(hoveredPoint.lowerBound, false)} – {formatINR(hoveredPoint.upperBound, false)}</span></div>
               </div>
             )}
           </div>

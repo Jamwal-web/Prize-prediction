@@ -71,36 +71,36 @@ export const CsvUploadModal: React.FC<CsvUploadModalProps> = ({
     let sample = '';
     let name = '';
     if (type === 'template') {
-      name = 'price_template.csv';
+      name = 'price_template_inr.csv';
       sample = `Date,Price,Source,Notes
-2026-06-01,899.00,Store API,Summer Sale
-2026-06-15,889.00,Online Deal,Clearance
-2026-07-01,879.00,Retail Store,July Promo
-2026-07-15,869.00,Store API,Mid-season
-2026-08-01,859.00,Retailer,Back to school
-2026-08-15,849.00,Direct Store,Labor Day
-2026-09-01,829.00,Online Index,Autumn Refresh
-2026-09-15,819.00,Retail Store,End of Quarter
-2026-10-01,799.00,Verified Vendor,Current Market Price`;
+2026-06-01,119900.00,Croma Store,Summer Sale
+2026-06-15,118900.00,Online Deal,Clearance
+2026-07-01,117900.00,Reliance Digital,July Promo
+2026-07-15,116900.00,Store API,Mid-season
+2026-08-01,115900.00,Retailer,Back to college
+2026-08-15,113900.00,Direct Store,Independence Day Sale
+2026-09-01,111900.00,Online Index,Autumn Refresh
+2026-09-15,109900.00,Reliance Digital,Festival Season
+2026-10-01,107900.00,Verified Vendor,Current Market Price`;
     } else if (type === 'iphone') {
-      name = 'iphone_15_pro_sample.csv';
+      name = 'iphone_15_pro_inr.csv';
       sample = `Date,Price,Source,Notes
-2026-04-01,999.00,Apple Official,Launch
-2026-05-01,995.00,Amazon,Discount
-2026-06-01,979.00,Best Buy,Memorial Day
-2026-07-01,969.00,Apple Store,Refreshed
-2026-08-01,949.00,Best Buy,Back to School
-2026-09-01,919.00,Apple Store,Pre-event adjustment
-2026-10-01,899.00,Apple Official,Current Market Price`;
+2026-04-01,134900.00,Apple Official,Launch
+2026-05-01,131900.00,Amazon India,Discount
+2026-06-01,127900.00,Croma,Summer Deal
+2026-07-01,125900.00,Apple Store,Refreshed
+2026-08-01,123900.00,Vijay Sales,Monsoon Sale
+2026-09-01,120900.00,Apple Store,Pre-festival adjustment
+2026-10-01,119900.00,Apple India / Croma,Current Market Price`;
     } else {
-      name = 'tesla_model_3_sample.csv';
+      name = 'tesla_model_3_inr.csv';
       sample = `Date,Price,Source,Notes
-2026-04-01,47740.00,Tesla Direct,Base Launch Price
-2026-05-10,46490.00,Tesla Inventory,Existing inventory discount
-2026-06-25,44990.00,Tesla Inventory,Quarterly delivery target
-2026-08-05,43990.00,Tesla Configurator,Standard range update
-2026-09-15,42990.00,Tesla Direct,Q3 incentives
-2026-10-01,42490.00,Tesla Direct,Verified Live Price`;
+2026-04-01,4500000.00,Tesla Direct India,Base Launch Price
+2026-05-10,4350000.00,Tesla Inventory,Existing inventory discount
+2026-06-25,4190000.00,Tesla Inventory,Quarterly delivery target
+2026-08-05,4080000.00,Tesla Configurator,Standard range update
+2026-09-15,3980000.00,Tesla Direct,Festival incentives
+2026-10-01,3950000.00,Tesla Direct India,Verified Live Price`;
     }
 
     setFileName(name);
@@ -206,7 +206,7 @@ export const CsvUploadModal: React.FC<CsvUploadModalProps> = ({
                     <tr key={i}>
                       <td className="py-1 px-3 tabular-nums">{p.date}</td>
                       <td className="py-1 px-3 text-right text-emerald-400 tabular-nums">
-                        ${p.price.toFixed(2)}
+                        ₹{p.price.toLocaleString('en-IN', { minimumFractionDigits: 2 })}
                       </td>
                       <td className="py-1 px-3 text-slate-400 truncate max-w-[200px]">{p.source}</td>
                     </tr>

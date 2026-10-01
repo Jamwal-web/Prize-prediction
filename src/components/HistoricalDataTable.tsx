@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { PricePoint } from '../types';
-import { Plus, Download, Trash2, Search, Calendar, Tag, ShieldCheck } from 'lucide-react';
+import { Plus, Download, Trash2, Search, ShieldCheck } from 'lucide-react';
+import { formatINR } from '../utils/formatters';
 
 interface HistoricalDataTableProps {
   points: PricePoint[];
@@ -98,7 +99,7 @@ export const HistoricalDataTable: React.FC<HistoricalDataTableProps> = ({
           <thead className="border-b border-slate-800 bg-slate-900/60 text-slate-400 font-medium">
             <tr>
               <th className="py-2.5 px-3">Date</th>
-              <th className="py-2.5 px-3 text-right">Price (USD)</th>
+              <th className="py-2.5 px-3 text-right">Price (INR / ₹)</th>
               <th className="py-2.5 px-3">Source / Vendor</th>
               <th className="py-2.5 px-3">Notes</th>
               <th className="py-2.5 px-3 text-right">Action</th>
@@ -120,7 +121,7 @@ export const HistoricalDataTable: React.FC<HistoricalDataTableProps> = ({
                       {p.date}
                     </td>
                     <td className="py-2 px-3 text-right font-mono font-semibold tabular-nums text-emerald-400">
-                      ${p.price.toLocaleString(undefined, { minimumFractionDigits: 2 })}
+                      {formatINR(p.price, true)}
                     </td>
                     <td className="py-2 px-3">
                       <div className="flex items-center gap-1.5 text-slate-300 truncate max-w-[200px]">

@@ -1,6 +1,7 @@
 import React from 'react';
-import { ExternalLink, CheckCircle2, AlertTriangle, Clock, ShieldCheck, ArrowUpRight, ArrowDownRight, Minus } from 'lucide-react';
+import { ExternalLink, CheckCircle2, Clock, ShieldCheck, ArrowUpRight, ArrowDownRight, Minus } from 'lucide-react';
 import { LivePriceQuote } from '../types';
+import { formatINR } from '../utils/formatters';
 
 interface RecommendationCardProps {
   recommendation: string;
@@ -70,7 +71,7 @@ export const RecommendationCard: React.FC<RecommendationCardProps> = ({
             <div className={`mt-1 text-base font-bold font-mono tabular-nums flex items-center gap-1 ${
               expectedChangeVal < 0 ? 'text-amber-400' : expectedChangeVal > 0 ? 'text-emerald-400' : 'text-slate-200'
             }`}>
-              {expectedChangeVal > 0 ? '+' : ''}${expectedChangeVal.toFixed(2)}
+              {expectedChangeVal > 0 ? '+' : ''}{formatINR(expectedChangeVal, true)}
               <span className="text-xs font-medium font-sans">
                 ({expectedChangePct > 0 ? '+' : ''}{expectedChangePct}%)
               </span>
@@ -82,7 +83,7 @@ export const RecommendationCard: React.FC<RecommendationCardProps> = ({
             <div className={`mt-1 text-base font-bold font-mono tabular-nums ${
               msrpDelta < 0 ? 'text-emerald-400' : 'text-slate-300'
             }`}>
-              {msrpDelta > 0 ? '+' : ''}${msrpDelta.toFixed(2)}
+              {msrpDelta > 0 ? '+' : ''}{formatINR(msrpDelta, false)}
               <span className="text-xs font-normal text-slate-400 ml-1">
                 ({msrpDeltaPct}%)
               </span>

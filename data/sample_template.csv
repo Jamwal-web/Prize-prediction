@@ -1,12 +1,12 @@
 Date,Price,Source,Notes
-2026-05-01,999.00,Retail Store,Launch MSRP
-2026-05-15,999.00,Retail Store,Stable
-2026-06-01,989.00,Online Deal,Memorial Day Promotion
-2026-06-15,979.00,Retail Store,Regular Price
-2026-07-01,969.00,Store API,Summer Sale
-2026-07-15,959.00,Store API,Mid-season Adjustment
-2026-08-01,949.00,Authorized Dealer,Back to School Promotion
-2026-08-15,939.00,Retail Store,Inventory Refresh
-2026-09-01,919.00,Direct Store,Labor Day Discount
-2026-09-15,909.00,Market Index,Quarterly Shift
-2026-10-01,899.00,Verified Retail API,Current Market Price
+2026-05-01,119900.00,Croma Store,Launch Price
+2026-05-15,119900.00,Reliance Digital,Standard MSRP
+2026-06-01,117900.00,Amazon India,Summer Sale
+2026-06-15,116500.00,Vijay Sales,Regular Price
+2026-07-01,114900.00,Croma Store,Monsoon Sale
+2026-07-15,113900.00,Apple Authorized,Mid-season Adjustment
+2026-08-01,112500.00,Authorized Dealer,Independence Day Promotion
+2026-08-15,110900.00,Reliance Digital,Freedom Sale
+2026-09-01,109900.00,Direct Store,Festival Season Kickoff
+2026-09-15,108500.00,Market Index,Great Indian Festival
+2026-10-01,107900.00,Verified Retail API,Current Market Price

@@ -48,7 +48,7 @@ def parse_and_validate_csv(csv_content: str) -> Tuple[bool, List[Dict[str, Any]]
             if not row or len(row) <= max(date_idx, price_idx):
                 continue
             raw_date = row[date_idx].strip()
-            raw_price = row[price_idx].strip().replace("$", "").replace("€", "").replace("£", "").replace(",", "")
+            raw_price = row[price_idx].strip().replace("₹", "").replace("$", "").replace("€", "").replace("£", "").replace(",", "")
 
             if not raw_date or not raw_price:
                 continue
@@ -106,10 +106,10 @@ def export_predictions_to_csv(historical_points: List[Dict[str, Any]], forecasts
         "Product",
         "Record Type",
         "Date",
-        "Historical Price (USD)",
-        "Predicted Price (USD)",
-        "Lower Bound 95% CI (USD)",
-        "Upper Bound 95% CI (USD)",
+        "Historical Price (INR / ₹)",
+        "Predicted Price (INR / ₹)",
+        "Lower Bound 95% CI (INR / ₹)",
+        "Upper Bound 95% CI (INR / ₹)",
         "Data Source"
     ])
 

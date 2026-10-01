@@ -81,13 +81,13 @@ export const ManualAddPriceModal: React.FC<ManualAddPriceModalProps> = ({
           </div>
 
           <div>
-            <label className="block font-medium text-slate-300 mb-1">Price (USD)</label>
+            <label className="block font-medium text-slate-300 mb-1">Price (INR / ₹)</label>
             <div className="relative">
               <input
                 type="number"
                 step="0.01"
                 required
-                placeholder="e.g. 899.99"
+                placeholder="e.g. 119900.00"
                 value={price}
                 onChange={(e) => setPrice(e.target.value)}
                 className="w-full rounded-lg border border-slate-800 bg-slate-900 py-2 px-3 font-mono text-white focus:border-blue-500 focus:outline-none"

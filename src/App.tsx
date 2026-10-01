@@ -8,6 +8,7 @@ import { CsvUploadModal } from './components/CsvUploadModal';
 import { GitHubPublishModal } from './components/GitHubPublishModal';
 import { ManualAddPriceModal } from './components/ManualAddPriceModal';
 import { Product, PricePoint, PredictionResult, LivePriceQuote, EngineStatus } from './types';
+import { formatINR, formatINRCompact } from './utils/formatters';
 import {
   Smartphone,
   Laptop,
@@ -356,7 +357,7 @@ export default function App() {
                   <span className="text-slate-400">{getCategoryIcon(p.category)}</span>
                   <span>{p.name}</span>
                   <span className="font-mono text-emerald-400 font-bold tabular-nums">
-                    ${p.current_price.toLocaleString()}
+                    {formatINR(p.current_price, false)}
                   </span>
                 </button>
               ))}

@@ -122,7 +122,7 @@ async function startServer() {
       const { historical_prices = [], forecasts = [], product_name = 'PricePredictor_Analysis' } = req.body;
 
       const rows: string[] = [];
-      rows.push('Product,Record Type,Date,Historical Price (USD),Predicted Price (USD),Lower Bound 95% CI (USD),Upper Bound 95% CI (USD),Data Source');
+      rows.push('Product,Record Type,Date,Historical Price (INR / ₹),Predicted Price (INR / ₹),Lower Bound 95% CI (INR / ₹),Upper Bound 95% CI (INR / ₹),Data Source');
 
       for (const hp of historical_prices) {
         rows.push(`"${product_name}","Historical","${hp.date}","${hp.price}","","","","${hp.source || 'Historical Record'}"`);

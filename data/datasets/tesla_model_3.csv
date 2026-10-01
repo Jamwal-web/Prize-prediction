@@ -1,11 +1,11 @@
 Date,Price,Source,Notes
-2026-04-01,47740.00,Tesla Direct,Base Launch Price
-2026-04-20,46990.00,Tesla Configurator,Price drop nationwide
-2026-05-10,46490.00,Tesla Inventory,Existing inventory discount
-2026-06-01,45990.00,Tesla Direct,End-of-quarter push
-2026-06-25,44990.00,Tesla Inventory,Quarterly delivery target
-2026-07-15,44490.00,Tesla Direct,Model refresh adjustment
-2026-08-05,43990.00,Tesla Configurator,Standard range update
-2026-08-25,43490.00,Tesla Inventory,Demo vehicle inventory
-2026-09-15,42990.00,Tesla Direct,Q3 incentives
-2026-10-01,42490.00,Tesla Direct,Verified Live Price
+2026-04-01,4500000.00,Tesla Direct India,Launch Price Ex-Showroom
+2026-04-20,4420000.00,Tesla India Configurator,Import duty optimization
+2026-05-10,4350000.00,Tesla Inventory India,Inventory discount
+2026-06-01,4290000.00,Tesla Direct,End-of-quarter push
+2026-06-25,4190000.00,Tesla Inventory,Quarterly delivery target
+2026-07-15,4120000.00,Tesla Direct,Model refresh adjustment
+2026-08-05,4080000.00,Tesla Configurator,Standard range update
+2026-08-25,4020000.00,Tesla Inventory,Demo vehicle inventory
+2026-09-15,3980000.00,Tesla Direct,Q3 festival incentives
+2026-10-01,3950000.00,Tesla Direct India,Verified Live Price
